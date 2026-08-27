@@ -1,36 +1,4 @@
-{% extends "base.html" %}
-{% block title %}CodeForge — Build Better{% endblock %}
-{% block content %}
-<section class="hero">
-  <div>
-    <div class="eyebrow">THE CODING TOOLKIT</div>
-    <h1>Code more.<br><span>Build more.</span></h1>
-    <p class="lead">A coding workspace where your plan unlocks more powerful tools as you level up from Bronze to Silver to Platinum.</p>
-    <div class="actions">
-      <a class="button primary" href="{{ url_for('signup') }}">Start building</a>
-      <a class="button ghost" href="{{ url_for('pricing') }}">View plans</a>
-    </div>
-  </div>
-  <div class="code-card">
-    <div class="dots">● ● ●</div>
-    <pre><code>def build_idea(idea):
+{% extends "base.html" %}{% block title %}CodeForge{% endblock %}{% block content %}<section class="hero"><div><div class="eyebrow">YOUR CODING TOOLKIT</div><h1>Build more.<br><span>Code better.</span></h1><p>Choose a plan and unlock more coding tools as you level up.</p><a class="button primary" href="{{url_for('pricing')}}">See plans</a></div><div class="code"><pre>def build_idea(idea):
     project = create_project(idea)
     test(project)
-    ship(project)
-
-build_idea("something awesome")</code></pre>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-heading">
-    <div class="eyebrow">WHY CODEFORGE</div>
-    <h2>Pick the power level you need.</h2>
-  </div>
-  <div class="feature-grid">
-    <div class="feature"><b>01</b><h3>Simple editor</h3><p>Start writing code immediately with a clean browser workspace.</p></div>
-    <div class="feature"><b>02</b><h3>Plan-based tools</h3><p>Unlock increasingly advanced tools when you move up a plan.</p></div>
-    <div class="feature"><b>03</b><h3>Built with Python</h3><p>The backend is Flask, with HTML and CSS on the front end.</p></div>
-  </div>
-</section>
-{% endblock %}
+    ship(project)</pre></div></section>{% endblock %}

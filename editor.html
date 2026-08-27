@@ -1,14 +1,4 @@
-{% extends "base.html" %}
-{% block title %}Code Editor — CodeForge{% endblock %}
-{% block content %}
-<div class="editor-page">
-  <div class="editor-head"><div><div class="eyebrow">BRONZE TOOL</div><h1>Code Editor</h1></div><a class="button ghost" href="{{ url_for('tools') }}">← Tools</a></div>
-  <div class="editor-shell">
-    <div class="editor-bar"><span>main.py</span><span>Python</span></div>
-    <textarea spellcheck="false">def hello(name):
+{% extends "base.html" %}{% block title %}Editor{% endblock %}{% block content %}<div class="page"><h1>Code Editor</h1><div class="editor"><textarea>def hello(name):
     return f"Hello, {name}!"
 
-print(hello("CodeForge"))</textarea>
-  </div>
-</div>
-{% endblock %}
+print(hello("CodeForge"))</textarea></div></div>{% endblock %}

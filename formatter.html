@@ -1,11 +1,1 @@
-{% extends "base.html" %}
-{% block title %}Code Formatter — CodeForge{% endblock %}
-{% block content %}
-<div class="editor-page">
-  <div class="editor-head"><div><div class="eyebrow">CODING TOOL</div><h1>Code Formatter</h1></div><a class="button ghost" href="{{ url_for('tools') }}">← Tools</a></div>
-  <form method="post" class="formatter">
-    <textarea name="code" spellcheck="false" placeholder="Paste code here...">{{ code }}</textarea>
-    <button class="button primary">Format code</button>
-  </form>
-</div>
-{% endblock %}
+{% extends "base.html" %}{% block title %}Formatter{% endblock %}{% block content %}<div class="page"><h1>Code Formatter</h1><form method="post"><textarea name="code" class="big">{{code}}</textarea><button class="button primary">Format code</button></form></div>{% endblock %}
