@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block content %}<div class="page"><h1>Coding Helper</h1><form method="post"><textarea name="question" placeholder="Ask a Python question...">{{question}}</textarea><button class="button">Get help</button></form>{% if answer %}<div class="result"><b>Helper:</b><p>{{answer}}</p></div>{% endif %}</div>{% endblock %}

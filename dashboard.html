@@ -1,1 +1,1 @@
-{% extends "base.html" %}{% block title %}Dashboard{% endblock %}{% block content %}<div class="head"><h1>Hi, {{user.username}}.</h1><p>Your plan: <b>{{user.plan}}</b></p><a class="button primary" href="{{url_for('tools')}}">Open tools</a></div>{% endblock %}
+{% extends "base.html" %}{% block content %}<div class="page"><h1>Welcome, {{user.username}}!</h1><p>Your plan: <b>{{user.plan}}</b></p><a class="button" href="/tools">Open my tools</a><a class="button" href="/projects">My projects</a></div>{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block title %}Editor{% endblock %}{% block content %}<div class="page"><h1>Code Editor</h1><div class="editor"><textarea>def hello(name):
+{% extends "base.html" %}{% block content %}<div class="page"><h1>Python Code Editor</h1><form method="post"><input name="name" value="My Python Project" placeholder="Project name"><textarea name="code" spellcheck="false">def hello(name):
     return f"Hello, {name}!"
 
-print(hello("CodeForge"))</textarea></div></div>{% endblock %}
+print(hello("CodeForge"))</textarea><button class="button">Save project</button></form></div>{% endblock %}
