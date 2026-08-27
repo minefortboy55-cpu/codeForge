@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — CodeForge{% endblock %}
+{% block content %}
+<section class="dashboard-head">
+  <div><div class="eyebrow">DASHBOARD</div><h1>Hey, {{ user.username }}.</h1><p>Your current plan is <strong>{{ user.plan }}</strong>.</p></div>
+  <a class="button primary" href="{{ url_for('tools') }}">Open tools</a>
+</section>
+<div class="dash-grid">
+  <div class="dash-card"><span>Current plan</span><strong>{{ user.plan }}</strong><a href="{{ url_for('pricing') }}">Change plan →</a></div>
+  <div class="dash-card"><span>Available tools</span><strong>{{ plans[user.plan].tools|length }}</strong><a href="{{ url_for('tools') }}">Explore →</a></div>
+  <div class="dash-card"><span>Quick start</span><strong>Editor</strong><a href="{{ url_for('editor') }}">Start coding →</a></div>
+</div>
+{% endblock %}

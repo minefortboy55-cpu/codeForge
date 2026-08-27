@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Log in — CodeForge{% endblock %}
+{% block content %}
+<div class="auth">
+  <div class="auth-card">
+    <div class="eyebrow">WELCOME BACK</div><h1>Log in</h1>
+    <form method="post">
+      <label>Username<input name="username" required autocomplete="username"></label>
+      <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
+      <button class="button primary full">Log in</button>
+    </form>
+    <p class="small">Need an account? <a href="{{ url_for('signup') }}">Sign up</a>.</p>
+  </div>
+</div>
+{% endblock %}

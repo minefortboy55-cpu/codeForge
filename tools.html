@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Tools — CodeForge{% endblock %}
+{% block content %}
+<section class="pricing-head left">
+  <div class="eyebrow">YOUR TOOLBOX</div><h1>{{ user.plan }} tools</h1>
+  <p>Tools with a lock are available on a higher plan.</p>
+</section>
+<div class="tool-grid">
+{% for name, required, description in tools %}
+  <div class="tool {% if level >= required %}unlocked{% else %}locked{% endif %}">
+    <div class="tool-top"><span class="tool-symbol">{% if level >= required %}✓{% else %}🔒{% endif %}</span><span class="tag">{{ ['Bronze','Silver','Platinum'][required-1] }}</span></div>
+    <h3>{{ name }}</h3><p>{{ description }}</p>
+    {% if level >= required %}
+      {% if name == 'Code Editor' %}<a href="{{ url_for('editor') }}">Open tool →</a>
+      {% elif name == 'Code Formatter' or name == 'Advanced Formatter' %}<a href="{{ url_for('formatter') }}">Open tool →</a>
+      {% else %}<span class="available">Available</span>{% endif %}
+    {% else %}<a href="{{ url_for('pricing') }}">Upgrade to unlock →</a>{% endif %}
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

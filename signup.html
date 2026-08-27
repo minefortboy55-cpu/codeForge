@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Create account — CodeForge{% endblock %}
+{% block content %}
+<div class="auth">
+  <div class="auth-card">
+    <div class="eyebrow">WELCOME</div><h1>Create your account</h1>
+    <p>Start on Bronze and upgrade whenever you need more tools.</p>
+    <form method="post">
+      <label>Username<input name="username" required autocomplete="username"></label>
+      <label>Password<input name="password" type="password" minlength="6" required autocomplete="new-password"></label>
+      <button class="button primary full">Create account</button>
+    </form>
+    <p class="small">Already have an account? <a href="{{ url_for('login') }}">Log in</a>.</p>
+  </div>
+</div>
+{% endblock %}
