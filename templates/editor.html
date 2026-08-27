@@ -18,7 +18,14 @@
         <button type="submit" class="button">Save Project</button>
     </form>
 
+    <br>
+
     <button type="button" class="button" onclick="runCode()">Run Code</button>
+
+    {% if output %}
+    <h2>Output</h2>
+    <pre>{{ output }}</pre>
+    {% endif %}
 
     <script>
     function runCode() {
@@ -38,6 +45,5 @@
         form.submit();
     }
     </script>
-
 </div>
 {% endblock %}
