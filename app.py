@@ -100,4 +100,7 @@ def editor(): return render_template("editor.html")
 @login_required
 def formatter():
  code=request.form.get("code",""); return render_template("formatter.html",code="\n".join(x.rstrip() for x in code.splitlines()))
-if __name__=="__main__": init_db(); app.run(debug=True)
+init_db()
+
+if __name__=="__main__":
+    app.run(debug=True)
