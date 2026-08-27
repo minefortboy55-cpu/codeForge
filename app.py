@@ -171,7 +171,31 @@ def helper():
     elif question:
         answer = "Break the problem into small steps, test each step, and read the last line of any Python error first."
     return render_template("helper.html", question=question, answer=answer)
+@app.route("/run-code", methods=["POST"])
+@require_login
+def run_code():
+    code = request.form.get("code", "")
 
+    try:
+        tree = ast.parse(code)
+        output = []
+
+        for node in tree.body:
+            if (
+                isinstance(node, ast.Expr)
+                and isinstance(node.value, ast.Call)
+                and isinstance(node.value.func, ast.Name)
+                and node.value.func.id == "print"
+            ):
+                values = [ast.literal_eval(arg) for arg in node.value.args]
+                output.append(" ".join(str(value) for value in values))
+
+        result = "\n".join(output) or "Code ran successfully."
+
+    except Exception as e:
+        result = f"Error: {e}"
+
+    return render_template("editor.html", output=result)
 @app.route("/analyzer", methods=["GET", "POST"])
 @require_login
 def analyzer():
