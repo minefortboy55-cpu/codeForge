@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block title %}Payment complete{% endblock %}{% block content %}<div class="card"><h1>Payment complete</h1><p>Stripe received the test subscription. The webhook will unlock the plan after confirmation.</p><a class="button primary" href="{{url_for('dashboard')}}">Dashboard</a></div>{% endblock %}
