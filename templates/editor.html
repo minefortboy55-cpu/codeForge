@@ -14,7 +14,30 @@
         <textarea name="code" rows="20" cols="80">print("Hello from CodeForge!")</textarea>
 
         <br><br>
-        <button type="submit" class="button primary">Save Project</button>
+
+        <button type="submit" class="button">Save Project</button>
     </form>
+
+    <button type="button" class="button" onclick="runCode()">Run Code</button>
+
+    <script>
+    function runCode() {
+        const code = document.querySelector('textarea[name="code"]').value;
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/run-code';
+
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'code';
+        input.value = code;
+
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    }
+    </script>
+
 </div>
 {% endblock %}
